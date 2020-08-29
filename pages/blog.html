@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name = "description" content="Blog Page">
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/javas.js"></script>
+	<title>Blog</title>
+<style>
+    /* margin and padding 0 for whole page */
+    * {
+        margin: 0%;
+        padding: 0%;
+    }
+    html {
+        scroll-behavior:smooth;
+    }
+    /* make the body full screen */
+    body {
+        height: 100%;
+        width: 100%;
+        background-color: white;
+    }
+    /* title for blogs */
+    .title {
+        margin: 10px;
+        color: grey;
+        font-size: 18px;
+    }
+    .card h1 {
+        margin: 10px;
+    }
+
+    p button:hover{
+        opacity: 0.7;
+    }
+    .animated-text {
+        padding: 5px;
+    }
+    /* main page of the blog */
+    .first-container {
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        height:800px;
+        width: inherit;
+        position: relative;
+        background-image: url(../background-images/space.jpg);
+        scroll-behavior: smooth;
+        background-size: cover;
+    }
+    /* items for the main page */
+    .first-container-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: -15%;
+    }
+    /* defining styles for the cards at the bottom */
+    .row {
+        display: flex;   
+        justify-content: flex-end;
+        position: relative;
+        margin-left: 50px;
+        flex-wrap:wrap;
+    }
+    /* Float three columns side by side */
+    .column {
+        width: 25%;
+        height: 80%;
+        margin: 20px 0px;
+    }
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+    /* Style the counter cards */
+    .card {
+        max-width: 85%;
+        /* max-height:100%; */
+        border-radius: 8px 8px 5px 5px;
+        padding: 0px 0px 16px 0px;
+        font-family:'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
+        box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.2);
+        text-align: left;
+        color: white;
+        background-color: #e6e6dd5d;
+        transition: 0.5s;
+    }
+    /* on card hover */
+    .column .card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 20px 20px rgba(0, 0, 0, .2);
+    }
+    .card a {
+        text-decoration: none;
+    }
+    .card h2 {
+        border-bottom: 1px sold rgb(22, 22, 22);
+        /* padding-bottom: 3px; */
+        color: rgb(32, 31, 31);
+    }
+    .card p {
+        color: rgb(51, 48, 48);
+    }
+    .card h2, .card p {
+        margin: 10px 10px 0px 20px;
+    }
+    .card img {
+        width: 100%;
+        border-radius: 8px 8px 0px 0px;
+    }
+    /* animated arrow button */
+    .arrow-button {
+        color: black;
+        float: right;
+        margin: -15px;
+        padding: 0px;
+        all: 0;
+    }
+    /* blog section */
+    .blogs-container {
+        display: flex;
+        scroll-behavior: smooth ;
+        flex-direction: row;
+    }
+    /* div for table of contents */
+    .navigation-div {
+        line-height: 1.2;
+        display: flex;
+        box-sizing: border-box;
+        justify-content: flex-start;
+        flex-direction: column;
+        flex-basis: 120%;
+        padding: 0px 10px 10px 50px;
+
+    }
+    .blogs-div {
+        display: flex;
+        line-height: 1.5;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .blog-content {
+        margin: 0px 50px 0px 50px;
+    }
+    .navigation-div a {
+        color: black;
+        text-decoration: none;
+    }
+    .table-of-contents {
+        background-color: #6e8efb;
+    }
+    .table-of-contents li{
+        list-style-type:none;
+        font-size: 20px;
+        color:#ffffff;
+        line-height: 2;
+        padding-left: 25px;
+    }
+    .table-of-contents li:hover {
+        background-color:#5378f0;
+        opacity: 0.9;
+    }
+    .content-title {
+        text-align: center;
+        font-family: 'Open Sans';
+        line-height: 1.5;
+        letter-spacing: 2px;
+        color: rgb(0, 0, 0);
+        font-size: 25px;
+    }
+    .blog-content p {
+        text-align: justify;
+        margin:10px 0px;
+        font-size: 16px;
+        word-spacing: 2px;
+        line-height: 1.8;
+        font-family:'Open Sans';
+    }
+    .blogs-div .content-title {
+        font-size: 30px;
+    }
+    .blogs-div .content-subtitle {
+        font-size:25px;
+        text-decoration: underline;
+    }
+    .content-subtitle, .content-sub-subtitle {
+        font-family: Poppins-Regular;
+        color: rgb(0, 0, 0);
+        margin: 15px 0px;
+        font-size:20px;
+    }
+    .blog-image {
+        width: 70%;
+        height: 500px;
+        margin-top: 20px;
+    }
+    .profile-card {
+        display: flex;
+        height: 500px;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .profile-card .profile-pic {
+        width: 120px;
+        position: relative;
+        margin-top: -60px;
+        border-radius: 50%;
+    }
+    .profile-card-contents {
+        display: flex;
+        border: 1px solid black;
+        border-radius: 8px;
+        background-color: #6e8efb;
+        position: relative;
+        padding: 15px;
+        box-sizing: border-box;
+        width: 320px;
+        font-size: 16px;
+        align-items: center;
+        font-family:'Open Sans',Poppins-Regular;
+        flex-direction: column;
+        top: 80px;
+        color: rgb(138, 127, 127);
+        background-color: rgb(255, 255, 255);
+    }
+    .profile-card-contents .count-div {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .profile-card-contents .card-number {
+        color:rgb(96, 192, 230);
+        font-weight:bold;
+        font-size:20px;
+        text-align: center;
+    }
+    .profile-card-contents .social-iconss img{
+        margin: 15px;
+        opacity: 0.2;
+        width: 20px;
+        height: 20px;
+    }
+    .profile-card-contents .social-iconss img:hover {
+        opacity: 0.5;
+    }
+    .profile-card-contents .profile-button {
+        margin: 35px 0px 20px -10px;
+    }
+    .profile-card-contents .profile-button a, .subscribe-button {
+        margin-left: 16px;
+        padding: 15px 35px;
+        text-decoration: none;
+        color: white;
+        border-radius: 4px;
+        background: linear-gradient(135deg, #fb6e6e, #8777e3);
+    }
+    .profile-button a:hover {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    }
+    
+</style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="mainmenu">
+            <ul id="ul">
+                <div class="main-icon">
+                    <li>
+                        <a href="../index.html" style="margin-top:10px;border: none;">
+                            <div id = "icondiv">
+                                <img class="icon" src="../Icons/icB.png">
+                            </div> 
+                        </a>
+                    </li>
+                </div>
+                <div class="main-links">
+                    <li><a class="menu-title" href="../index.html">Home</a></li>
+                    <li><a class="menu-title" href="CV.html">CV</a></li>
+                    <li><a class="menu-title active" href="blog.html">Blog</a></li>
+                    <li><a class="menu-title" href="research.html">Research</a></li>
+                    <li><a class="menu-title" href="ContactUs.html">Contact</a></li>
+                    <a href="mailto:dreamcoderamit@gmail.com"><li class = "hire-button"> <span class="truncated-text">Currently Unavailable</span><span>Hire me</span></li></a>
+                </div>
+            </ul>
+        </div>
+        <div class="first-container" id="first-container">
+            <div class="first-container-items">
+                <span style="text-shadow:  1px 2px 3px rgba(88, 83, 83, 0.13);font-size:80px;color:rgb(61, 54, 54);font-family:Poppins-Bold">The World of Technology</span>
+                <span style="padding:5px;margin-top:20px;font-size:17px;width: 100%;text-align:center;background-color:rgb(92, 85, 85);mix-blend-mode: multiply;color: white;letter-spacing: 2.5px;font-family:'Open Sans'">
+                    Our world is built on biology and once we begin to understand it, it then becomes a technology.</span>
+                    <span style="padding:5px;text-align:center;background-color:rgb(94, 92, 92);mix-blend-mode: multiply;color: white;letter-spacing: 2.5px;">-Ryan Bethencourt</span>
+                <div id="blog-introduction" style="position:absolute;bottom:30px;"></div>
+                <div>
+                    <section id="section02" class="demo">
+                        <a href="#blog-introduction"><span></span></a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="blank-container0"></div>
+    <div class="blogs-container" id="container">
+        <div class="navigation-div">
+            <div id="blank-container1" style="height:60px"></div>
+            <div class="table-of-contents" >
+                <div class="content-title" style="background-color:#62f199;padding: 5px;">TABLE OF CONTENTS</div>
+                <nav>
+                    <ul>
+                        <a href="#blog-introduction"><li>Introduction</li>
+                        <a href="#blog-impacts"><li>Impacts of Technology</li></a>
+                        <a href="#blog-trends"><li>Technology Trends</li></a>
+                        <a href="#blank-container3"><li>Conclusion</li></a>
+                    </ul>
+                </nav>
+            </div>
+            <div class="profile-card">
+                <div class="profile-card-contents">
+                    <img id="my-pic" class="profile-pic" src="../img/me4.jpg" alt="Me">
+                    <div style="font-size:25px;color: rgb(97, 89, 89);margin: 10px 0px 0px 0px;">Amit Kharel</div>
+                    <div style="font-size:15px;margin: 10px 0px 10px 0px">Nepal</div>
+                    <div align="center">I write about whatever happens to be on my mind when I sit down.</div>
+                    <div class="social-iconss" style="margin:10px">
+                        <a href=""><img src="../Icons/facebook-small.png" alt=""></a>
+                        <a href=""><img src="../Icons/instagram-small.png" alt=""></a>
+                        <a href=""><img src="../Icons/twitter-small.png" alt=""></a>
+                    </div>
+                    <div style="display:flex;flex-direction:row;">
+                        <div class="count-div">
+                        <span class="card-number">42</span>
+                        Customers
+                        </div>
+                        <hr style="border:1px solid rgba(230, 233, 235, 0.678);">
+                        <div class="count-div">
+                        <span class="card-number">608</span>
+                        Followers
+                        </div>
+                        <hr style="border:1px solid rgba(230, 233, 235, 0.678);">
+                        <div class="count-div">
+                        <span class="card-number">56</span>
+                        Projects
+                        </div>
+                    </div>
+                    <div class="profile-button">
+                        <a href="CV.html">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div  ></div>
+        <div class="blogs-div">
+            <div class="blog-content default">
+                <div id="blank-container1" style="height:50px"></div>
+                <div class="content-title">Introduction</div>
+                <div>
+                    <p>We are living in an era of advanced technology, where every part of our daily lives is related to the science of craft in one way or another.
+                    There’s no doubt that over the years technology has been responsible for creating amazingly useful resources which put all the information we need at our fingertips. The development of technology has led to so many mind-blowing discoveries, better facilities, and better luxuries, but at the same has dramatically changed our daily lives. Various highly-developed gadgets, connected to the Internet, have changed the way we communicate, use humor, study, work, shop, play, and behave.
+                    It’s not difficult to recognize just how much of the technology we use on a daily basis — from computers, cell phones, laptops, tablets and TVs to refrigerators and convection ovens that cook food evenly. Here are six ways technology impacts your daily life.</p>
+                </div>
+            </div>
+            <div class="blog-content" id="blog-impacts">
+                <div id="blank-container1" style="height:60px"></div>
+                <div class="content-title">Impacts of Technology</div>
+                <div>
+                    <p>
+                        Technology and human life cannot be separated; society has a cyclical co-dependence on technology. We use technology; depend on technology in our daily life and our needs and demands for technology keep on rising. Humans use technology to travel, to communicate, to learn, to do business and to live in comfort. However, technology has also caused us concerns. Its poor application has resulted in the pollution of the environment and it has also caused a serious threat to our lives and society. This calls for the proper use of technology. The biggest challenge facing people is to determine the type of future we need to have and then create relevant technologies which will simplify the way we do things.
+                    </p>
+                    <p>
+                        It is impossible to explore how each new advanced technology has impacted our lives and how it will impact the future. Technology impacts the environment, people and the society as a whole. The way we use technology determines if its impacts are positive to the society or negative.  For example, (POSITIVE IMPACT) we can use corn to make ethanol and this ethanol can be used as fuel. Fuel can be used to run machines and cars which will increase the output of manufacturing industries at a lower cost. (NEGATIVE IMPACT) However, if we decide to shift large quantities of corn to fuel production from food production, humans will be left with no food and this will cause world hunger which even is a worse situation.
+                    </p>
+                    <p>
+                        It’s not difficult to recognize just how much of the technology we use on a daily basis — from computers, cell phones, laptops, tablets and TVs to refrigerators and convection ovens that cook food evenly. I have listed some positive and negative impacts of technology in our society below.
+                    </p>
+                </div>
+                <div class="content-subtitle">Positive Impacts</div>
+                <div class="content-sub-subtitle">1.&nbsp&nbspImproved Communication</div>
+                <div>
+                    <p>Technology has improved communication: Communication is used for a number of purposes. Both society and organizations depend on communication to transfer information.  People use technology to communicate with each other. Electronic media like radios, televisions, internet, social media have improved the way we exchange ideas which can develop our societies. In many countries, radios and televisions are used to voice the concerns of the society, they organize live forums where the community can contribute through mobile phones or text service systems like twitter.</p>
+                    <p>Even though technology is beneficial to communication and allows people to stay in touch, you need to find a balance between the cyber world and real world. These technological advancements might be incredible and important in today’s society, but you must be careful to not lose sight of the people who are physically around you. While communicating via social media might be fun and more convenient, it is also harmful to our social skills. Spending quality time with your friends and family to create memorable experiences is especially important for happiness.</p>
+                </div>
+                <div class="content-sub-subtitle">2.&nbsp&nbspImproved Education And Learning Process</div>
+                <p>Technology has improved education and learning process: Education is the backbone of every economy. People need well and organized educational infrastructures so that they can learn how to interpret information. Many schools have started integrating educational technologies in their schools with a great aim of improving the way students learn. Technologies like smart whiteboards, computers, mobile phones, iPads, projectors, and internet are being used in classrooms to boost students moral to learn. Visual education is becoming more popular and it has proved to be the best method of learning in many subjects like mathematics, physics, biology, geography, economics and much more. The business community has invested money in various educational technologies which can be used by both teachers and their students.  For example, on iTunes, you will find many educational applications which can allow students and teachers exchange academic information at any time, this has made learning mobile.  Also, programs like Long distance learning have opened boundaries too so many scholars around the world.</p>
+                <div class="content-subtitle">Negative Impacts</div>
+                <div class="content-sub-subtitle">1.&nbsp&nbspIncreased Population</div>
+                <p>Technology has helped us live longer by improving health facilities and aiding in the research for solutions for most health problems which affect humans. This is good news for developed countries but is bad news for developing countries which have not been in a position to access these health care benefits brought by technology. In developed countries population growth is controlled by advanced birth control methods, this has helped them balance their population in relation to natural resources and other opportunities which come with a planned population. This is different in developing countries, the rate at which people produce is very high, the mortality rate is high, food is scarce and health care is poor.</p>
+                <div class="content-sub-subtitle">2.&nbsp&nbspIncreased Pollution</div>
+                <p>Pollution affects the land we grow crops on, the water we drink and the air we breathe. The increased demand for new technologies and advancement of technologies has resulted in many manufacturing and processing factories. As they work so hard to create the best technologies for both society and business, they release harmful chemicals and gasses which have polluted our environment and this has resulted in climate changes (global warming). So the more technology we enjoy, the more we harm our environment. Experts have tried to implement ways of reducing this impact by encouraging factories to go green, to a small extent, this has been achieved through the development of green technologies like; green cars, green computers, but a great effort is still needed to reduce the pollution of the air and the earth.</p>
+            </div>
+            <div class="blog-content" id="blog-trends">
+                <div id="blank-container2" style="height:60px"></div>
+                <div class="content-title">Technology Trends</div>
+                <div class="content-sub-subtitle">
+                        1.&nbsp&nbsp The Internet of Things (IoT)
+                </div>
+                <p>An Image Depicting Technology Trends Impacting Marketing - Internet of ThingsThe Internet of Things (IoT) is the global network of things (electronics, software, sensors and connectivity) that creates value for users and manufacturers, i.e. the whole product or service eco-system.) This value is created through bi-directional flows of data and information with the manufacturer, connected devices and users. Each and every thing in the global network is uniquely identifiable through its embedded computing system and can interoperate within the web.</p>
+                <p>As technology continues to penetrate all aspects of our lives, the Internet of Things is expected to constantly expand. Things may include patient monitoring, automobiles, police and thermostats, manufacturing, field operations, etc. As this expansion continues, the expectation is that huge amounts of data will be generated that will drive big data and analytics.</p>
+                <div class="content-sub-subtitle">
+                        2.&nbsp&nbspSmart Machines
+                </div>
+                <p>
+                    In general, Smart Machines are intelligent devices that use machine-to-machine (M2M) technology. Smart machines include robots, self-driving cars and other cognitive computing systems that are able to make decisions and solve problems without human intervention.
+                </p>
+                <p>Analysts predict that smart machines will be disruptive because of their corresponding effects on society. Organizations believe that smart machines will offer a competitive advantage by enabling more efficient manufacturing processes which will lead to higher profit margins. </p>
+                <p>Analytics and context-rich systems are expected to drive smart machines. Advanced algorithms will increase the need for systems to learn for themselves and act upon those learnings. Gartner notes that machine helpers will continue to evolve from the existing prototypes for autonomous vehicles, advanced robots, virtual personal assistants and smart advisors. The analysis goes on to speculate that the smart machine era will be the most disruptive in the history of IT.</p>
+            </div>
+            <div class="blog-content" id="blog-conclusion">
+                <div id="blank-container3" style="height:60px"></div>
+                <div class="content-title">Conclusion</div>
+                <p>In Conclusion, technology has covered the whole world. Almost every creature and object here are controlled or managed by technology in one way or another.
+                    Technology has improved education and learning process.Communication is used for a number of purposes. Both society and organizations depend on communication to transfer information. People use technology to communicate with each other. Electronic media like radios, televisions, internet, social media have improved the way we exchange ideas which can develop our societies.
+                </p>
+                <p><u>Find out about more technology trends and affairs from the references below.</u></p>
+            </div>
+        </div>
+    </div>
+    <a href="#blog-introduction"><img src="../Icons/go-to-top.png" id="floating-button" alt=""></a>
+    <div id="cards-container">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <a href="https://en.wikipedia.org/wiki/Self-driving_car" target="_blank">
+                        <img src="../img/car.jpg">
+                        <h2>Self-Driving Cars</h2>
+                    </a>
+                    <p>A self-driving car, also known as a robot car, autonomous car, or driverless car, is a vehicle that is capable of sensing its environment and moving with little or no human input.</p>
+                </div>
+                <div class="card" style="margin-top:20px;">
+                    <a href="https://www.aitrends.com/healthcare/here-are-five-ways-ai-is-being-used-to-advance-cancer-research/" target="_blank">
+                        <img src="../img/cancer.jpg">
+                        <h2>AI in research</h2>
+                    </a>
+                    <p>AI and its various applications are redefining the way scientists approach cancer research, according to a review published in Drug Discovery Today.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div>
+                        <a href="https://www.nationalgeographic.com/science/2019/01/smartphones-revolutionize-our-lives-but-at-what-cost/" target="_blank">
+                            <img src="../img/phone.jpg">
+                            <h2>Smartphones</h2>
+                        </a>
+                        <p>Over the past decade, smartphones have revolutionized our lives in ways that go well beyond how we communicate. It’s incontrovertible that smartphone technology has yielded many benefits for society. Read this article to know more.</p>
+                    </div>
+                </div>
+                <div class="card" style="margin-top:20px;">
+                    <a href="https://www.virgin.com/travel/how-has-technology-changed-planes" target="_blank">
+                        <img src="../img/plane.jpg">
+                        <h2>Aircraft Technology</h2>
+                    </a>
+                    <p>People's expectations of what technology means to them is very different now to what it was 10 years ago. Read this article to know how technology has changes planes.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <a href="https://openai.com/blog/robots-that-learn/" target="_blank">
+                        <img src="../img/openai.jpg">
+                        <h2>Robots that Learn-OpenAI</h2>
+                    </a>
+                    <p>OpenAI is an artificial intelligence research group which researches on futuristic artificial intelligence models and ideas. They've created a robotics system, trained entirely in simulation and deployed on a physical robot, which can learn a new task after seeing it done once.</p>
+                </div>
+                <div>
+                    <a class="arrow-button" style="margin: 15px 25px 0px 0px;" href="https://www.bbva.com/en/nine-technology-trends-in-2019/" target="_blank"><span>See more</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="columnn">
+            <div id = "icondiv">
+                <img class="icon" style="opacity:0.8;margin: 0px 0px 10px -4px;" src="../Icons/icB.png">
+            </div> 
+            <div class="footer-title">Connect with Me</div>
+            <div>
+                <a href="https://www.facebook.com/ajeetkharel" target="_blank" title="Facebook"><img src="../Icons/fb.png" alt="Facebook logo"></a>
+                <a href="https://www.instagram.com/ajeetkharel" target="_blank" title="Instagram"><img src="../Icons/instagram.png" alt="Instagram logo"></a>
+                <a href="https://www.twitter.com/amittkharel" target="_blank" title="Twitter"><img src="../Icons/twitter.png" alt="Twitter logo"></a>
+                <a href="https://www.linkedin.com/in/amit-kharel-4ab167173/" target="_blank" title="Linkedin"><img src="../Icons/linkedin.png" alt="Linkedin logo"></a>
+            </div>
+        </div>
+        <hr style="margin-left:110px;margin-top: -20px;height: 180px;">
+        <div style="margin-left:100px;align-items: center;text-align: center;margin-top: -30px;">
+                <form id = "subscribe" action="">
+                    <img src="../Icons/subscribe.png" style="width:60px;height:60px" alt="Newsletter" title="Subscribe to newsletter">
+                    <p style="padding:10px">Know about my future projects and availability</p>
+                    <input type="email" placeholder="Enter your email" id = "email" required>
+                    <button style="cursor:pointer" onclick="return subscribed()">SUBSCRIBE</button>
+                </form>
+        </div>
+        <hr style="margin-left:100px;margin-top: -20px;height: 180px;";>
+        <div style="height:150px;display:flex;flex-direction:column ;margin-left: 50px;justify-content: space-between">
+            <a href="https://www.google.com/maps/place/27%C2%B040'11.4%22N+83%C2%B028'00.2%22E/@27.6698202,83.4661618,211m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x3996864275d9755f:0x2b1e92d89d4bb3ae!2sButwal!3b1!8m2!3d27.6873608!4d83.4323375!3m5!1s0x0:0x0!7e2!8m2!3d27.6698191!4d83.4667092" target="_blank">
+                <div style="display:flex;flex-direction: row;">
+                    <img src="../Icons/map.png" style="height:75%;margin-top: 5px;" alt="map">
+                    <div>
+                        35002 Butwal <br>
+                        Rupandehi, Nepal <br>
+                    </div>
+                </div>
+            </a>
+            <a href="tel:+9779867719666">
+                <div style="display:flex;flex-direction: row">
+                    <img src="../Icons/phone-black.png" alt="Phone">
+                    <div style="margin-top:5px">
+                        (+977)9867719666
+                    </div>
+                </div>
+            </a>
+            <a href="mailto:dreamcoderamit@gmail.com">
+                <div style="display:flex;flex-direction: row;justify-content: center">
+                    <img src="../Icons/email.png" alt="Mail">
+                    <div style="margin-top:5px">
+                            dreamcoderamit@gmail.com
+                        </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div align="center" style="padding:0px 0px 10px 0px;font-size: 15px;font-family: Poppins-Regular;box-sizing:border-box;background:url(../background-images/white.png)">
+         Copyright &copy DCA Studios 2019.  All rights reserved
+        </div>
+    <script>
+    setInterval(slider, 3000);
+    var images = [ '../background-images/space.jpg', '../background-images/robo.jpg', '../background-images/newnew.jpg'];
+    var i = 0;
+    function slider() { 
+        if (i < images.length) {
+            i = i + 1;
+        } else {
+            i = 1;
+        }
+        document.getElementById('first-container').style.backgroundImage = "url('"+images[i-1]+"')";
+    }
+</script>
+</body>
+</html>

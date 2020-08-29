@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <link rel="stylesheet" href="css/style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name = "description" content="Home Page">
+        <!-- <Script src="js/javas.js"></script> -->
+		<title>Home</title>
+        <style>
+            /* set margin 0 for whole page */
+            * {
+                margin: 0px;
+            }
+            /* make the body full screen with smooth scroll */
+            html, body{
+                scroll-behavior: smooth;
+                width: 100%;
+                height: 100%;
+            }
+             /* the main container of the page */
+            .container {
+                background-image: url(background-images/back-new-3.jpg);
+                display:flex;
+                flex-direction: column;
+                background-size: 100% 100%;
+                height: 100%;
+            }
+            /* style for main div of homepage */
+            .main-div {
+                display: flex;
+                justify-content: flex-start;
+                align-content: center;
+                align-self: center;
+                color: rgb(92, 90, 90);
+                flex-direction: column;
+                position: relative;
+                text-align: center;
+                top: 250px;
+                left:0px;
+                right:0px; 
+                bottom:0;
+            }
+            /* navigation menu bar */
+            .main-menu {
+                display: flex;
+            }
+            li a {
+                color: rgb(255, 255, 255);
+            }
+            .button {
+                margin-top: 15px;
+                width: 25%;
+                align-self: center;
+            }
+
+        </style>
+    </head>
+    
+    <body background="">
+        <div class="container">
+            <div class="mainmenu">
+                <ul id="ul">
+                    <div class="main-icon">
+                        <li>
+                            <a href="index.html" style="margin-top:10px;border: none;">
+                                <div id = "icondiv">
+                                    <img class="icon" src="Icons/icB.png">
+                                </div> 
+                            </a>
+                        </li>
+                    </div>
+                    <div class="main-links">
+                        <li><a class="menu-title active"href="index.html">Home</a></li>
+                        <li><a class="menu-title" href="pages/CV.html">CV</a></li>
+                        <li><a class="menu-title" href="pages/blog.html">Blog</a></li>
+                        <li><a class="menu-title" href="pages/research.html">Research</a></li>
+                        <li><a class="menu-title"href="pages/ContactUs.html">Contact</a></li>
+                        <a href="mailto:dreamcoderamit@gmail.com"><li class = "hire-button"> <span class="truncated-text">Currently Unavailable</span><span>Hire me</span></li></a>
+                    </div>
+                </ul>
+            </div>
+            <div class="main-div">
+                <div style="font-size: 60px;margin: 50px;">
+                    Welcome to my Portfolio
+                </div>
+                <div style="font-size: 40px;margin: 10px">Amit Kharel</div>
+                <div style="font-size: 20px;margin: 10px">Web Developer|Student</div>
+                <a align="center" class="button" href="pages/CV.html">KNOW MORE</a>
+               
+                <div id="my-projects" style="position:relative;top:152px;"></div>
+            </div>
+            <div>
+                <section id="section02" class="demo">
+                    <a href="#my-projects"><span></span></a>
+                </section>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="columnn">
+                <div id = "icondiv">
+                    <img class="icon" style="opacity:0.8;margin: 0px 0px 10px -4px;" src="Icons/icB.png">
+                </div> 
+                <div class="footer-title">Connect with Me</div>
+                <div>
+                    <a href="https://www.facebook.com/ajeetkharel" target="_blank" title="Facebook"><img src="Icons/fb.png" alt="Facebook logo"></a>
+                    <a href="https://www.instagram.com/ajeetkharel" target="_blank" title="Instagram"><img src="Icons/instagram.png" alt="Instagram logo"></a>
+                    <a href="https://www.twitter.com/amittkharel" target="_blank" title="Twitter"><img src="Icons/twitter.png" alt="Twitter logo"></a>
+                    <a href="https://www.linkedin.com/in/amit-kharel-4ab167173/" target="_blank" title="Linkedin"><img src="Icons/linkedin.png" alt="Linkedin logo"></a>
+                </div>
+            </div>
+            <hr style="margin-left:110px;margin-top: -20px;height: 180px;">
+            <div style="margin-left:100px;align-items: center;text-align: center;margin-top: -30px;">
+                    <form id = "subscribe" action="">
+                        <img src="Icons/subscribe.png" style="width:60px;height:60px" alt="Newsletter" title="Subscribe to newsletter">
+                        <p style="padding:10px">Know about my future projects and availability</p>
+                        <input type="email" placeholder="Enter your email" id = "email" required>
+                        <button style="cursor:pointer" onclick="return subscribed()">SUBSCRIBE</button>
+                    </form>
+            </div>
+            <hr style="margin-left:100px;margin-top: -20px;height: 180px;";>
+            <div style="height:150px;display:flex;flex-direction:column ;margin-left: 50px;justify-content: space-between">
+                <a href="https://www.google.com/maps/place/27%C2%B040'11.4%22N+83%C2%B028'00.2%22E/@27.6698202,83.4661618,211m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x3996864275d9755f:0x2b1e92d89d4bb3ae!2sButwal!3b1!8m2!3d27.6873608!4d83.4323375!3m5!1s0x0:0x0!7e2!8m2!3d27.6698191!4d83.4667092" target="_blank">
+                    <div style="display:flex;flex-direction: row;">
+                        <img src="Icons/map.png" style="height:75%;margin-top: 5px;" alt="map">
+                        <div>
+                            35002 Butwal <br>
+                            Rupandehi, Nepal <br>
+                        </div>
+                    </div>
+                </a>
+                <a href="tel:+9779867719666">
+                    <div style="display:flex;flex-direction: row">
+                        <img src="Icons/phone-black.png" alt="Phone">
+                        <div style="margin-top:5px">
+                            (+977)9867719666
+                        </div>
+                    </div>
+                </a>
+                <a href="mailto:dreamcoderamit@gmail.com">
+                    <div style="display:flex;flex-direction: row;justify-content: center">
+                        <img src="Icons/email.png" alt="Mail">
+                        <div style="margin-top:5px">
+                                dreamcoderamit@gmail.com
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div align="center" style="padding:0px 0px 10px 0px;font-size: 15px;font-family: Poppins-Regular;box-sizing:border-box;background:url(background-images/white.png)">
+                Copyright &copy DCA Studios 2019.  All rights reserved
+        </div>
+        <script>
+                        //on-scroll function for navigation bar
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+              //when the page is scrolled over 80px then:
+              if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) { 
+                  //add white background to the nav bar
+                  document.getElementById("ul").style.padding = "8px 10px";
+                  document.getElementById("ul").style.backgroundColor = "rgb(240, 239, 240)";
+                  text = document.querySelectorAll(".menu-title");
+                  text.forEach(element => {
+                      element.style.color = 'black';
+                      element.style.borderColor = "black";
+                    });
+                    document.getElementById("icondiv").innerHTML = '<img class="icon" src="Icons/icB.png">';
+                } else {
+                    //make nav bar transparent
+                    document.getElementById("ul").style.padding = "12px 10px";
+                    document.getElementById("ul").style.background = "transparent";
+              }
+
+
+              //scroll function to show go to top floating button
+              if (document.documentElement.scrollTop > 1000) { //when the page is scrolled over 1000px then:
+                document.getElementById('floating-button').style.display = 'block';  //display the button
+              }
+              else{
+                document.getElementById('floating-button').style.display = 'none';    //hide the button
+              }
+            }
+
+            // function for  subscribe to newsletter
+            function subscribed() {
+              var element = document.getElementById("email");
+              if(element.checkValidity()) {
+                  //if valid email entered
+                  alert("Successfully subscribed.")
+                  document.getElementById("subscribe").reset();
+                  return false;
+              }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/style.css" />
+        <Script src="../js/javas.js"></script>
+		<meta name = "description" content="Contact Page">
+	<title>Contact</title>
+
+        <title></title>
+        <style>
+            /* set margin and padding 0 for whole page */
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+            /* background image for body */
+            body {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url(../background-images/contactbg.jpg);
+                background-size: cover;
+            }
+            /* style for form section */
+            .formsection {
+                display: flex;
+                flex-wrap: wrap-reverse;
+                margin-top: 80px;
+            }
+            /* call and show map section */
+            #reachsection {
+                margin-left: 50px;
+                margin:100px 0px 100px 10px;
+                display: flex;
+                flex-wrap:wrap;
+                justify-content: center;
+                flex-direction: column;
+            }
+            #call-us {
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                justify-content: center;
+                margin: 0px 0px 20px 0px;
+            }
+            #reach-title {
+                color: #353335;
+            }
+            #reach-texts {
+                color: #000000;
+            }
+            .numbersection {
+                margin: 10px 0px 0px 35px;
+                flex-direction: column;
+                /* background: linear-gradient(90deg, rgba(42, 36, 221, 0.349) 9%, rgba(51, 78, 231, 0.488) 24%, rgba(185, 182, 182, 0.544) 91%, rgba(182, 168, 168, 0.062) 100%); */
+            }
+            #show-map {
+                flex-direction:column;
+                justify-content: flex-end;
+            }
+            .reach-title-div {
+                padding: 3px 0px;
+                border-radius: 50px;
+                vertical-align: middle;
+                text-align: left;
+                background-image: linear-gradient(to left, rgba(93, 32, 236, 0.822), #85dde9);
+            }
+            /* animated arrow button */
+            .arrow-button {
+                border-radius: 40px;
+                margin-top: 10px;
+                background-image: linear-gradient(to left, rgba(172, 7, 84, 0.822), #e98585);
+                margin-left: 200px;
+            }
+            #mapsection {
+                display: none;
+                flex-wrap: wrap;
+                justify-content: right;
+                flex-direction: column-reverse;
+                align-items: flex-start;
+            }
+            #map {
+                display: flex;
+                -moz-border-radius: 10px;
+                border-radius: 10px;
+                margin-left: 50px;
+                margin-top: 5px;
+                overflow: hidden;
+            }
+            #hideButton {
+                margin-left: 50px;
+            }
+            #inputsection {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 50px;
+                width: 700px;
+                background: #fff;
+                border-radius: 10px;
+                float: right;
+            }
+            form {
+                margin-top: 20px;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+            }
+            .error-message{
+                display: block;
+                width: 100%;
+                margin-top: 5px;
+                height: 20px;
+            }
+            .error-message span {
+                margin-left: 260px;
+                color: red;
+            }
+            ::placeholder { 
+                font-family: Poppins-Regular;
+                padding: 5px;
+                color: gray;
+                font-size: 15px;
+            }
+            /* styles for form inputs and labels */
+            input {
+                margin-left: 20px;  
+                font-size: 15px; 
+                height: 45px;
+                width: 300px;
+                border: none;
+                border-bottom-style: inset;
+                border-bottom: 1.2px solid black;
+            }
+            label {
+                color: rgb(100, 92, 92);
+                padding-top: 10px;
+                float:left;
+                font-size: 16px;
+                font-family: Poppins-Regular;
+                line-height: 1.2;
+                text-align: right;
+                position: relative;
+                width: 100px;
+            }
+            
+            input:focus, textarea:focus {
+                outline: none;
+                border-bottom-color:rgb(78, 188, 231);
+            }
+            textarea {
+                font-size: 15px;
+                margin-left: 20px;   
+                padding-top: 10px;
+                max-width: 300px;
+                min-width: 300px;
+                height: 180px;
+                max-height: 180px;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid black;
+            }
+            .contact-form-title {
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+                width: 100%;
+                position: relative;
+                z-index: 1;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                padding: 64px 15px 64px 15px;
+                background-color: rgba(54, 84, 99, 0.541);
+            }
+            .contact-form-title::before {
+                font-family: Poppins-Regular;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba(29, 53, 65, 0.692);
+            }
+            .contact-form-title-1 {
+                font-family: Poppins-Bold;
+                font-size: 23px;
+                color: #fff;
+                line-height: 1.2;
+                text-align: center;
+                letter-spacing: 2px;
+                padding-bottom: 2px;
+            }
+            .contact-form-title-2 {
+                font-family:Poppins-Regular ;                
+                font-size: 17px;
+                color: #fff;
+                line-height: 1.5;
+                letter-spacing: 2px;
+                text-align: center;
+                padding-top: 5px;
+            }
+            /* submit button for form */
+            .button {
+                border: none;
+                background-image: linear-gradient(to left, rgb(182, 182, 182), #747474);
+                color: white;
+                padding: 15px 35px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+                cursor: pointer;
+                -webkit-transition-duration: 0.4s;
+                transition-duration: 0.4s;
+                border-radius: 25px;
+                margin: 0px 0px 10px 0px;
+            }
+            /* on submit button hover */
+            .button:hover {
+                background-color: rgb(75, 67, 94);
+                box-shadow: 0 10px 13px 0 rgba(15, 14, 95, 0.24),0 15px 40px 0 rgba(0,0,0,0.19);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="mainmenu">
+            <ul id="ul">
+                <div class="main-icon">
+                    <li>
+                        <a href="../index.html" style="margin-top:10px;border: none;">
+                            <div id = "icondiv">
+                                <img class="icon" src="../Icons/icB.png">
+                            </div> 
+                        </a>
+                    </li>
+                </div>
+                <div class="main-links">
+                    <li><a class="menu-title" href="../index.html">Home</a></li>
+                    <li><a class="menu-title" href="CV.html">CV</a></li>
+                    <li><a class="menu-title" href="blog.html">Blog</a></li>
+                    <li><a class="menu-title" href="research.html">Research</a></li>
+                    <li><a class="menu-title active" href="ContactUs.html">Contact</a></li>
+                    <a href="mailto:dreamcoderamit@gmail.com"><li class = "hire-button"> <span class="truncated-text">Currently Unavailable</span><span>Hire me</span></li></a>
+                </div>
+            </ul>
+        </div>
+        <div class="formsection">
+            <div id="reachsection">
+                <div id="call-us">
+                    <div class="reach-title-div">
+                        <img style="float: left;margin-right:5px;height: 30px;opacity: 0.75;" src="../Icons/phone-black.png" alt="">
+                        <span class="contact-form-title-1" id="reach-title">Call Me</span>
+                    </div>
+                    <div class="numbersection">
+                        <div class="contact-form-title-2" id="reach-texts">
+                            <table>
+                                <tr>
+                                    <td><img style="width: 15px;height: 20px" src="../Icons/nepal-logo.png"></td>
+                                    <td>+977-986-771-9666 (active)</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="contact-form-title-2" id="reach-texts">
+                            <table>
+                                <tr>
+                                    <td><img style="width: 20px;height: 15px" src="../Icons/india-logo.png"></td>
+                                    <td>+91-855-598-0379</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="show-map" class="reach-title-div">
+                    <span>
+                        <img style="margin-right:5px;float: left;" src="../Icons/map.png" alt="Map logo">
+                        <span class="contact-form-title-1" id="reach-title">Find me on Google Maps</span>
+                    </span>
+                </div>
+                <button onclick="showMap();checkOnline()" class="arrow-button"><span>Show Map </span></button>
+            </div>
+            <div id = "mapsection">
+                <div id="map">
+                    <img src="../img/map-pic.png">
+                </div>
+                <button id = "hideButton" class="arrow-button" onclick=hideMap()><span>Hide Map </span></button>
+            </div>
+            <div id="inputsection">
+                <div class="contact-form-title"  style="background-image: url(../background-images/contactme.jpg);">
+                    <span class="contact-form-title-1">
+                        Get in touch
+                    </span>
+                    <span class="contact-form-title-2">
+                            Let's talk about our project
+                    </span>
+                </div>
+                <form id="contactForm">
+                    <div class="row" id="name-div">
+                        <label for="name">Full Name:</label> 
+                        <input type="text" id="name" name="name" placeholder="Enter full name"> 
+                    </div>
+                    <div class="error-message"><span id="error-message-name"></span></div>
+                    <div class="row" id="email-div">
+                        <label for="email">Email:</label> 
+                        <input type="text" id="email" name="email" placeholder="Enter email address">
+                    </div>
+                    <div class="error-message"><span id="error-message-email"></span></div>
+                    <div class="row" id="subject-div">
+                        <label for="subject">Message:</label> 
+                        <textarea id="message" name="message" placeholder="Your comment"></textarea>
+                    </div>
+                    <div class="error-message"><span id="error-message-subject"></span></div>
+                    <div class="row">
+                        <button onclick="return validateForm()" type="button" class="button">Submit</button> 
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            var mapSection = document.getElementById("mapsection");
+            var reachSection = document.getElementById("reachsection");
+
+            function checkOnline() {
+                var map = document.getElementById("map");
+                if (navigator.onLine) {
+                    map.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d618.4431201738123!2d85.32652987468812!3d27.708501781792712!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1fdf1a6d41d2512d!2sIslington+College!5e0!3m2!1sen!2snp!4v1556504864208!5m2!1sen!2snp" width="650" height="600" frameborder="0" style="border-radius: 10px;" allowfullscreen></iframe>'
+                }
+            }
+            function validateForm() {
+                var s = 0;
+                s+=validateName();
+                s+=validateEmail();
+                s+=validateMessage();
+
+                if (s==3) {
+                    alert("Form successfully sent. Thankyou for reaching us.")
+                    document.getElementById("contactForm").reset()
+                }
+            }
+            
+
+            //validate name
+            function validateName() {
+                var name = document.forms["contactForm"]["name"];
+                var error_message_name = document.getElementById("error-message-name");
+                if (name.value == "") {
+                    error_message_name.innerHTML = "***enter valid name";
+                    name.style.borderColor = "red";
+                    return 0;
+                }
+                else {
+                    error_message_name.innerHTML = "";
+                    name.style.borderColor = "black";
+                    return 1;
+                }
+            }
+            
+            //validate message
+            function validateMessage(){
+                var message = document.forms["contactForm"]["message"];
+                var error_message_subject = document.getElementById("error-message-subject");
+                if (message.value == "") {
+                    error_message_subject.innerHTML = "***enter valid message";
+                    message.style.borderColor = "red";
+                    return 0;
+                }
+                else {
+                    error_message_subject.innerHTML = "";
+                    message.style.borderColor = "black";
+                    return 1;
+                }
+            }
+            
+            // validate email
+            function validateEmail() {
+                var emailID= document.forms["contactForm"]["email"];
+                var error_message_email = document.getElementById("error-message-email");
+                atpos = emailID.value.indexOf("@");
+                dotpos = emailID.value.lastIndexOf(".");
+                
+                if (atpos < 1 || ( dotpos - atpos < 2 )) {
+                    error_message_email.innerHTML = "***enter valid email";
+                    emailID.style.borderColor = "red";
+                    return 0;
+                }
+                else {
+                    error_message_email.innerHTML = "";
+                    emailID.style.borderColor = "black";
+                    return 1;
+                }
+            }
+
+            function showMap() {
+                mapSection.style.display = "flex";
+                reachSection.style.display = "none";
+            }
+            function hideMap() {
+                mapSection.style.display = "none";
+                reachSection.style.display = "flex";
+            }
+        </script>        
+    </body>
+</html>

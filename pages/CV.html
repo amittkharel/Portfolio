@@ -1,0 +1,526 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="../css/style.css"> 
+		<meta name = "description" content="CV Page">
+        <Script src="../js/javas.js"></script>
+	<title>CV</title>
+
+        <style>
+            /* margin and padding 0 for whole page */
+            * {
+                margin: 0px;
+                padding: 0%;
+            }
+            body {
+                overflow: hidden;
+                height: 100%;
+                width: 100%;
+                background-size: cover;
+            }
+            /* main container of the page */
+            div.container {
+                border-radius: 2px;
+                overflow: auto;
+                position:absolute;
+                top: 50;
+                left:0;
+                right:0; 
+                bottom:0;
+                padding: 25px 0px 50px 0px;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                filter: brightness(1.05);
+            }
+            /* left box of the cv */
+            .personal-info {
+                border-radius: 2px;
+                padding: 20px 30px 20px 50px;
+                color: black;
+                font-family:'Arial', Helvetica, sans-serif;
+                background-color: rgba(201, 195, 189, 0.966);
+                flex-direction: column;
+                flex-basis: 16%;
+                justify-content: center;
+                box-shadow: 1px 1px 5px 2px rgba(70, 65, 65, 0.527);
+            }
+            .personal-info .profile-img{
+                display: flex;
+                justify-content: center;
+                margin: 10px;
+            }
+            .personal-info .profile-img img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                box-shadow:  0px 5px 5px 0px rgba(147, 147, 153, 0.432),0 10px 30px 0 rgba(0,0,0,0.19);
+            }
+            .personal-info .name-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .personal-info .name-text .fname{
+                font-size: 30px;
+                color: rgb(37, 38, 44);
+                margin: 5px;
+            }
+            .personal-info .name-text .lname{
+                font-size: 30px;
+                color: rgb(66, 28, 41);
+            }
+            .personal-info .name-text .skill , .title{
+                font-size: 13px;
+                border-top: 0.5px solid  rgba(58, 36, 43, 0.877);;
+                border-bottom: 0.5px solid  rgba(71, 44, 52, 0.87);;
+                margin: 10px 0px 0px 0px;
+                padding: 2px 2px 2px 2px;
+                opacity: 0.9;
+            }
+            .personal-info .row {
+                display: flex;
+                justify-content: left;
+                margin: 15px 10px;
+            }
+            .personal-info .row a{
+                display: flex;
+                justify-content: left;
+                color: initial;
+                text-decoration: none;
+            }
+            .personal-info .title {
+                display: flex;
+                margin-top: 40px;
+                font-size: 19px;
+                border-width: 2px;
+            }
+            .personal-info .row-text {
+                display: flex;
+                flex-direction: column;
+            }
+            .personal-info .row-icon {
+                margin-right: 8px;
+            }
+            .personal-info .row-icon img {
+                /* opacity: 0.8; */
+                width: 25px;
+                height: 25px;
+            }
+            .personal-info .row-text .row-title-text {
+                font-size: 15px;
+            }
+            .personal-info .row-text .row-text-info {
+                font-size: 12px;
+            }
+            /* right box of the cv */
+            .other-details {
+                border-radius: 2px;
+                display: flex;
+                flex-direction: column;
+                flex-basis: 35%;
+                font-family:'Arial', Helvetica, sans-serif;
+                background-color: #ece9f0;
+                box-shadow: 1px 1px 5px 2px rgba(58, 56, 56, 0.527);
+                padding: 10px 0px 0px 10px;
+            }
+            .other-details .row {
+                display: flex;
+                justify-content: left;
+                flex-direction: column;
+                color: rgb(41, 36, 36);
+                margin: 15px;
+            }
+            .other-details .row-title {
+                color: rgb(41, 38, 38);
+                border-radius: 15px;
+                background-color: rgb(210, 209, 216);
+                font-weight: bold;
+                display: flex;
+                flex-direction: row;
+            }
+            .other-details .row-title img {
+                width: 29px;
+                height: 28px;
+                opacity: 0.95;
+                background-color: rgb(14, 13, 13);
+                border-radius: 50%
+            }
+            .other-details .row-title .row-title-text {
+                vertical-align: middle;
+                padding: 5px 0px 0px 8px;
+                font-size: 17px;
+            }
+            .other-details .row .row-text {
+                font-size: 15px;
+                padding: 15px 8px 5px 7px;
+            }
+            .other-details .row .row-table table{
+                margin: 15px 0px 0px 5px;
+            }
+            .other-details .row .row-table th {
+                font-size: 16px;
+                color: rgb(34, 32, 32);
+                width: 150px;
+                text-align: left;
+            }
+            .other-details .row .row-table td {
+                font-size: 15px;
+                color: rgb(27, 26, 26);
+            }
+            .interests-container {
+                display: flex;
+                justify-content: space-between;
+                margin: 20px 10px 0px 20px;
+            }
+
+            .interests-container img {
+                height: 30px;
+                opacity: 0.8;
+            }
+            .skills-main-container {
+                display: flex;
+                flex-direction: row;
+            }
+            .skills-container{
+                display: flex;
+                flex-basis: 35%;
+                flex-direction: column;
+                margin: 5px 0px 0px 15px;
+            }
+            .skill {
+                display: flex;
+                margin: 5px;
+                flex-direction: column;
+            }
+            .skill-name {
+                font-size: 12px;
+            }
+            /* start animation from skill 0% */
+            @keyframes load{
+                from {
+                    width: 0%
+                }
+            }
+            /* animated skills bar */
+            .bar{
+                display: flex;
+                background-color: rgb(216, 206, 216);
+            }
+            .bar::before{
+                content:'';
+                display: inline-block;
+                background-color: #493c48;
+                animation: load 2s 0s;
+                padding: 5px 0px 4px 0px;
+            }
+            .bar.learning::before{
+                width: calc(20% - 10px);
+            }
+            .bar.basic::before{
+                width: calc(40% - 10px);
+            }
+            .bar.intermediate::before{
+                width: calc(60% - 10px);
+            }
+            .bar.advanced::before{
+                width: calc(80% - 10px);
+            }
+            .bar.expert::before{
+                width: calc(100% - 10px);
+            }
+        </style>
+    </head>
+    <body background="../background-images/white.png">
+        <div class="mainmenu">
+            <ul id="ul">
+                    <div class="main-icon">
+                        <li>
+                            <a href="../index.html" style="margin-top:10px;border: none;">
+                                <div id = "icondiv">
+                                    <img class="icon" src="../Icons/icB.png">
+                                </div> 
+                            </a>
+                        </li>
+                    </div>
+                    <div class="main-links">
+                        <li><a class="menu-title" href="../index.html">Home</a></li>
+                        <li><a class="menu-title active" href="CV.html">CV</a></li>
+                        <li><a class="menu-title" href="blog.html">Blog</a></li>
+                        <li><a class="menu-title" href="research.html">Research</a></li>
+                        <li><a class="menu-title"href="ContactUs.html">Contact</a></li>
+                        <a href="mailto:dreamcoderamit@gmail.com"><li class = "hire-button"> <span class="truncated-text">Currently Unavailable</span><span>Hire me</span></li></a>
+                    </div>
+                </ul>
+        </div>
+
+        <div class="container">
+            <div class="pen">
+                <img src="../img/pen.png" style="width: 80px;height: inherit" alt="">
+            </div>
+            <div class="personal-info">
+                <div class="profile-img">
+                    <img src="../img/me.jpg" alt="Amit Picture">
+                </div>
+                <div class="name-text">
+                    <span class="fname"> AMIT </span>
+                    <span class="lname"> KHAREL </span>
+                    <span class="skill"> WEB DEVELOPER | APP DEVELOPER</span>
+                </div>
+
+                <div class="info-area">
+                    <span class="title">INFO</span>
+                    <div class="row">
+                        <div class="row-icon">
+                            <img src="../Icons/user-black.png" alt="Person Logo">
+                        </div>
+                        <div class="row-text">
+                            <div class="row-title-text">Name</div>
+                            <div class="row-text-info">Amit Kharel</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row-icon">
+                                <img src="../Icons/map.png" alt="Map logo">    
+                        </div>
+                        <div class="row-text">
+                            <div class="row-title-text">Address</div>
+                            <a href="https://www.google.com/maps/place/27%C2%B040'11.4%22N+83%C2%B028'00.2%22E/@27.6698202,83.4661618,211m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x3996864275d9755f:0x2b1e92d89d4bb3ae!2sButwal!3b1!8m2!3d27.6873608!4d83.4323375!3m5!1s0x0:0x0!7e2!8m2!3d27.6698191!4d83.4667092" target="_blank">
+                                <div class="row-text-info">
+                                35002 Agneepath <br>
+                                Butwal, Rupandehi <br>
+                                State-5, Nepal <br>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row-icon">
+                            <img src="../Icons/phone-black.png" alt="Facebook logo">    
+                        </div>
+                        <div class="row-text">
+                            <div class="row-title-text">Phone</div>
+                            <a href="tel:9867719666"><div class="row-text-info">(+977) 9867719666</div></a>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="row-icon">
+                            <img src="../Icons/email.png" alt="Email logo">    
+                        </div>
+                        <div class="row-text">
+                            <div class="row-title-text">Email</div>
+                            <a href="mailto:dreamcoderamit@gmail.com"><div class="row-text-info">dreamcoderamit@gmail.com</div></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-area">
+                    <div class="skill title">SOCIAL</div>
+                    <div class="row">
+                        <a href="https://www.facebook.com/ajeetkharel" target="_blank" title="Facebook">
+                            <div class="row-icon">
+                                <img src="../Icons/fb.png" alt="Facebook logo">    
+                            </div>
+                            <div class="row-text">
+                                <div class="row-title-text">Facebook</div>
+                                <div class="row-text-info">ajeetkharel</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <a href="https://www.twitter.com/amittkharel" target="_blank" title="Twitter">
+                            <div class="row-icon">
+                                <img src="../Icons/twitter.png" alt="Twitter logo">        
+                            </div>
+                            <div class="row-text">
+                                    <div class="row-title-text">Twitter</div>
+                                    <div class="row-text-info">amittkharel</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <a href="https://www.instagram.com/ajeetkharel" target="_blank" title="Instagram">
+                            <div class="row-icon">
+                                <img src="../Icons/instagram.png" alt="Instagram logo">    
+                            </div>
+                            <div class="row-text">
+                                <div class="row-title-text">Instagram</div>
+                                <div class="row-text-info">ajeetkharel</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <a href="https://www.linkedin.com/in/amit-kharel-4ab167173/" target="_blank" title="Linkedin">
+                            <div class="row-icon">
+                                <img src="../Icons/linkedin.png" alt="Linkedin logo">   
+                            </div>
+                            <div class="row-text">
+                                    <div class="row-title-text">Linkedin</div>
+                                    <div class="row-text-info">Amit Kharel</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="other-details">
+                <div class="row">
+                    <div class="row-title">
+                        <img src="../Icons/user-black.png" style="background-color: rgb(247, 243, 243);" alt="User logo">   
+                        <div class="row-title-text"> PROFILE </div>
+                    </div>
+                    <div class="row-text">
+                        <p>A confident and highly organized professional with experience in busy office and reception environments. With high passion and dedication I have been working in my related fields for about six years and hope to work more with same compassion in coming days.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row-title">
+                        <img src="../Icons/work.png" alt="Work logo">   
+                        <div class="row-title-text"> WORK EXPERIENCE </div>
+                    </div>
+                    <div class="row-table">
+                        <table border="0px">
+                            <tr>
+                                <th>2013 - 2015</th>
+                                <th>Android Developer</th>
+                            </tr>
+                            <tr>
+                                <td style="font-size:13px">Nepal</td>
+                                <td style="font-size:13px">Semicolondev</td>
+                            </tr>
+                            <tr >
+                                <td></td>
+                                <td style=" padding-top: 5px;">Android app UI designer.</td>
+                            </tr>
+                        </table>
+                        <table border="0px">
+                            <tr>
+                                <th>2015 - 2017</th>
+                                <th>Android Developer</th>
+                            </tr>
+                            <tr>
+                                <td style="font-size:13px">Nepal</td>
+                                <td style="font-size:13px">Softnep</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style=" padding-top: 5px;">Backend developer for android apps.</td>
+                            </tr>
+                        </table>
+                        <table border="0px">
+                            <tr>
+                                <th>2018 - 2019</th>
+                                <th>Web Developer</th>
+                            </tr>
+                            <tr>
+                                <td style="font-size:13px">Nepal</td>
+                                <td style="font-size:13px">BMP Infology</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td style=" padding-top: 5px;">Front-end JS developer.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row-title">
+                        <img src="../Icons/skills.png" alt="Skills logo">   
+                        <div class="row-title-text"> SKILLS AND EXPERTIZE </div>
+                    </div>
+                    <div class="skills-main-container">
+                        <div class="skills-container">
+                            <div class="skill" title="advanced">
+                                <div class="skill-name">Java</div>
+                                <div class="bar advanced"></div>
+                            </div>
+                            <div class="skill" title="basic">
+                                <div class="skill-name">Python</div>
+                                <div class="bar basic"></div>
+                            </div>
+                            <div class="skill" title="expert">
+                                <div class="skill-name">Android App</div>
+                                <div class="bar expert"></div>
+                            </div>
+                            <div class="skill" title="advanced">
+                                <div class="skill-name">CSS</div>
+                                <div class="bar advanced"></div>
+                            </div>
+                            <div class="skill" title="learning">
+                                <div class="skill-name">JavaScript</div>
+                                <div class="bar learning"></div>
+                            </div>
+                        </div>
+                        <div class="skills-container">
+                            <div class="skill" title="intermediate">
+                                <div class="skill-name">Photoshop</div>
+                                <div class="bar intermediate"></div>
+                            </div>
+                            <div class="skill" title="expert">
+                                <div class="skill-name">Video Editing</div>
+                                <div class="bar expert"></div>
+                            </div>
+                            <div class="skill" title="basic">
+                                <div class="skill-name">Photography</div>
+                                <div class="bar basic"></div>
+                            </div>
+                            <div class="skill" title="advanced">
+                                <div class="skill-name">Cooking</div>
+                                <div class="bar advanced"></div>
+                            </div>
+                            <div class="skill" title="intermediate">
+                                <div class="skill-name">Writing</div>
+                                <div class="bar intermediate"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row-title">
+                        <img src="../Icons/education.png" alt="Education logo">   
+                        <div class="row-title-text"> EDUCATION </div>
+                    </div>
+                    <div class="row-table">
+                        <table border="0px">
+                            <tr>
+                                <th>2017-2018</th>
+                                <th>Everest College</th>
+                            </tr>
+                            <tr>
+                                <td>Nepal</td>
+                                <td>+2 Level</td>
+                            </tr>
+                        </table>
+                        <table border="0px">
+                            <tr>
+                                <th>2019-present</th>
+                                <th>Islington College</th>
+                            </tr>
+                            <tr>
+                                <td>Nepal</td>
+                                <td>BSc(Hons) IT Computing</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row-title">
+                        <img src="../Icons/hobby.png" alt="Hobby logo">   
+                        <div class="row-title-text"> HOBBY & INTERESTS </div>
+                    </div>
+                    <section>
+                        <div class="interests-container">
+                            <img src="../img/guitar.svg" alt="icon" title="Guitar">
+                            <img src="../img/piano.svg" alt="icon" title="Piano">
+                            <img src="../img/controller.svg" alt="icon" title="Gaming">
+                            <img src="../img/headphones.svg" alt="icon" title="Listening Music">
+                            <img src="../img/monitor.svg" alt="icon" title="Watching Movies">
+                            <img src="../img/camera.svg" alt="icon" title="Photography">
+                            <img src="../img/cutlery.svg" alt="icon" title="Eating">
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

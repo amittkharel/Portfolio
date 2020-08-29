@@ -1,0 +1,297 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/style.css">
+		<meta name = "description" content="Research Page">
+        <script src="../js/javas.js"></script>
+		<title>Research</title>
+        <style>
+            /* margin and padding 0 for whole page */
+            * {
+                margin: 0px;
+                padding: 0%;
+                scroll-behavior: smooth;
+            }
+            .body {
+                display: flex;
+                justify-content: center;
+                align-items: baseline;
+                flex-direction: column;
+                background-size: cover;
+            }
+            .research-div {
+                position: relative;
+                align-items: center;
+                display: flex;
+                box-sizing: border-box;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .content-title {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                background-image: url(../background-images/researchh.jpg);
+                background-size: 100% 100%;
+                justify-content: center;
+                align-items: center;
+                top: -40px;
+                width: 100%;
+                z-index: 1;
+                height:600px;
+            }
+            .content-title::before {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba(228, 228, 228, 0.89);
+            }
+            .content-title p{
+                font-size: 20px;
+            }
+            .content-title span {
+                font-size: 30px;
+                color: rgb(112, 40, 40);
+                font-family: Poppins-Bold;
+                margin-bottom: 10px;
+            }
+            .research-card {
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                flex-basis: 50%;
+                margin: 50px 50px 50px 200px;
+                line-height: 1.5;
+                padding: 10px 30px;
+                align-items: flex-start;
+            }
+            .research-content{
+                display: flex;
+                text-align: center;
+                flex-direction: column;
+                margin: 0px 50px;
+                color: rgb(173, 36, 36);
+            }
+            .research-card a{
+                color: rgb(141, 65, 29);
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: bolder;
+                width: 100%;
+                padding-bottom: 5px;
+                font-size: 25px;
+                text-decoration: none;
+                border-bottom: 1px solid rgb(230, 145, 34);
+            }
+            .research-card .research-content p a {
+                color: rgb(148, 98, 22);
+                font-family: Poppins-Regular;
+                font-size: 14px;
+                border-bottom: 1px solid;
+                text-decoration: none;
+            }
+            .research-card .research-content p {
+                text-align: center;
+                font-size: 17px;
+                margin-top: 20px;
+                font-family: Poppins-Regular;
+                width: 100%;
+            }
+            .research-card .images {
+                margin-top: 15px;
+                display:flex;
+                flex-direction:row;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="body">
+            <div class="mainmenu">
+                <ul id="ul">
+                    <div class="main-icon">
+                        <li>
+                            <a href="../index.html" style="margin-top:10px;border: none;">
+                                <div id = "icondiv">
+                                    <img class="icon" src="../Icons/icB.png">
+                                </div> 
+                            </a>
+                        </li>
+                    </div>
+                    <div class="main-links">
+                        <li><a class="menu-title" href="../index.html">Home</a></li>
+                        <li><a class="menu-title" href="CV.html">CV</a></li>
+                        <li><a class="menu-title" href="blog.html">Blog</a></li>
+                        <li><a class="menu-title active" href="research.html">Research</a></li>
+                        <li><a class="menu-title"href="ContactUs.html">Contact</a></li>
+                        <a href="mailto:dreamcoderamit@gmail.com"><li class = "hire-button"> <div class="truncated-text">Currently Unavailable</div><div>Hire me</div></li></a>
+                    </div>
+                </ul>
+            </div>
+            <div class="research-div">
+                <div class="content-title">
+                    <span style="text-shadow:  1px 2px 3px rgba(88, 83, 83, 0.13);font-size:80px;color:rgb(61, 54, 54);font-family:Poppins-Bold">Research Section</span>
+                    <span style="padding:5px;margin-top:20px;font-size:17px;text-align:center;background-color:rgb(92, 85, 85);mix-blend-mode: multiply;color: white;letter-spacing: 2.5px;font-family:'Open Sans'">
+                        The researches that helped me build this site are all enlisted below.
+                    </span>
+                    <div>
+                        <section id="section02" class="demo">
+                            <a href="#research-part"><span></span></a>
+                        </section>
+                    </div>
+                    <div id="research-part" style="position:absolute;bottom:30px;"></div>
+                </div>
+                <div class="design-research">
+                    <div style="text-align:center;font-size:60px;font-family:'Poppins-Regular'">For Design</div>
+                    <hr><hr style="margin-bottom:20px;">
+                    <div class="research-card">
+                        <a href="https://internetingishard.com/html-and-css/flexbox/">1. FlexBox Design</a>
+                        <div class="images">
+                            <img src="../img/Research/flex.png" alt="">
+                            <hr style="margin:0px 20px;">
+                            <img src="../img/Research/cv.png" alt=""> <br>
+                        </div>
+                        <div class="research-content">
+                            <p>For the layout designing of the webpages, proper arrangement and alignment of contents have to be done. Through this page I learned how to design a Flex Layout in html/css and was able to implement in my website.&nbsp<a href="https://internetingishard.com/html-and-css/flexbox/">See more</a></p>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <a href="https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp">2. Navigation Bar</a>
+                        <div class="images">
+                            <img src="../img/Research/nav-scroll.png" alt="">
+                            <hr style="margin:0px 20px;">
+                            <img src="../img/Research/navbar.png" alt="">
+                        </div>
+                        <div class="research-content">
+                            <p>My navigation bar was not sticking in its position and was scrolling down with other contents of the page. This page helped me a lot in desgning my navigation bar, adding animation and many more.&nbsp<a href="https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp">See more</a></p></p>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <a href="https://stackoverflow.com/questions/32102747/how-to-make-a-back-to-top-button-using-css-and-html-only">3. Go to Top button</a>
+                        <div class="images">
+                            <img src="../img/Research/go-to-top-research.png" alt="">
+                            <hr style="margin:0px 20px;">
+                            <img style="height:250px;width: 600px" src="../img/Research/go-to-top.png" alt="">
+                        </div>
+                        <div class="research-content">
+                            <p>Since the contents in some pages were too long and covered many pages. Due to this, navigation to top was time confusing. So, to make top navigation easier I intented to add go to top button and to add this I took help from the following thread of stackoverflow.&nbsp<a href="https://stackoverflow.com/questions/32102747/how-to-make-a-back-to-top-button-using-css-and-html-only">See more</a></p></p>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <a href="https://codepen.io/nxworld/pen/OyRrGy">4. Scroll Down Button</a>
+                        <div class="images">
+                            <img src="../img/Research/scroll-down.png" alt="">
+                            <hr style="margin:0px 20px;">
+                            <img src="../img/Research/scroll-down-my.png" alt="">
+                        </div>
+                        <div class="research-content">
+                            <p>
+                                Since the contents in some pages were too long and covered many pages. Due to this, navigation to top was time confusing. So, to make top navigation easier I intented to add go to top button and to add this I took help from the following thread of stackoverflow.
+                                &nbsp<a href="https://codepen.io/nxworld/pen/OyRrGy">See more</a></p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animation-research">
+                    <div style="text-align:center;font-size:60px;font-family:'Poppins-Regular'">For Animations</div>
+                    <hr><hr style="margin-bottom:20px;">
+                    <div class="research-card">
+                        <a href="https://codepen.io/milacarrera/pen/pEPoZz">1. Animated Skill Bar</a>
+                        <div class="images">
+                            <img src="../img/Research/skill-bar.png" alt="">
+                            <hr style="margin:0px 20px;">
+                            <img src="../img/Research/skills-bar.png" alt="">
+                        </div>
+                        <div class="research-content">
+                            <p>Looking at the CV template I just took help from, I had to add a skill bar in order to make it look cool and also animation in it would make it look more cool. So, I took help from this CodePen code to add animation to my skill bar and implemented it in my code.&nbsp<a href="https://codepen.io/milacarrera/pen/pEPoZz">See more</a></p></p>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <a href="https://stackoverflow.com/questions/33888214/css-animation-to-extend-button-text-on-hover">2. Button Animation</a>
+                        <p style="margin-left:650px;word-spacing:150px"><u>Normal</u> <u>On-hover</u></p>
+                        <div class="images">
+                            <img src="../img/Research/btn-animation.png" alt="">
+                            <hr style="margin:0px 20px;">
+                            <img style="height:60px;width: 400px;" src="../img/Research/hireme.png" alt="">
+                        </div>
+                        <div class="research-content">
+                            <p>
+                                For the hire me button, I wanted to make it look more eye catching and perfectly animated. For this, I searched on many sites but I found this to be best and used some idea to add animation on my hire me button. 
+                                &nbsp<a href="https://stackoverflow.com/questions/33888214/css-animation-to-extend-button-text-on-hover">See more</a></p>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content-research">
+                        <div style="text-align:center;font-size:60px;font-family:'Poppins-Regular'">For Blog and Images</div>
+                        <hr><hr style="margin-bottom:20px;">
+                        <div class="research-card">
+                            <a href="https://www.useoftechnology.com/technology-society-impact-technology-society/">Technology Trends</a>
+                            https://www.useoftechnology.com/technology-society-impact-technology-society/
+                            <a href="https://tech.co/news/6-main-ways-technology-impacts-daily-life-2017-02">Impacts of Technology</a>
+                            https://tech.co/news/6-main-ways-technology-impacts-daily-life-2017-02
+                            <a href="https://creativemarket.com/NhungDvove/387861-Floral-CV-template">For CV</a>
+                            https://creativemarket.com/NhungDvove/387861-Floral-CV-template
+                            <a href="https://cdn3.iconfinder.com/data/icons/iconic-1/32/arrow_up_alt1-512.png">Go to Top Button</a>
+                            https://cdn3.iconfinder.com/data/icons/iconic-1/32/arrow_up_alt1-512.png
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="columnn">
+                <div id = "icondiv">
+                    <img class="icon" style="opacity:0.8;margin: 0px 0px 10px -4px;" src="../Icons/icB.png">
+                </div> 
+                <div class="footer-title">Connect with Me</div>
+                <div>
+                    <a href="https://www.facebook.com/ajeetkharel" target="_blank" title="Facebook"><img src="../Icons/fb.png" alt="Facebook logo"></a>
+                    <a href="https://www.instagram.com/ajeetkharel" target="_blank" title="Instagram"><img src="../Icons/instagram.png" alt="Instagram logo"></a>
+                    <a href="https://www.twitter.com/amittkharel" target="_blank" title="Twitter"><img src="../Icons/twitter.png" alt="Twitter logo"></a>
+                    <a href="https://www.linkedin.com/in/amit-kharel-4ab167173/" target="_blank" title="Linkedin"><img src="../Icons/linkedin.png" alt="Linkedin logo"></a>
+                </div>
+            </div>
+            <hr style="margin-left:110px;margin-top: -20px;height: 180px;">
+            <div style="margin-left:100px;align-items: center;text-align: center;margin-top: -30px;">
+                    <form id = "subscribe" action="">
+                        <img src="../Icons/subscribe.png" style="width:60px;height:60px" alt="Newsletter" title="Subscribe to newsletter">
+                        <p style="padding:10px">Know about my future projects and availability</p>
+                        <input type="email" placeholder="Enter your email" id = "email" required>
+                        <button style="cursor:pointer" onclick="return subscribed()">SUBSCRIBE</button>
+                    </form>
+            </div>
+            <hr style="margin-left:100px;margin-top: -20px;height: 180px;";>
+            <div style="height:150px;display:flex;flex-direction:column ;margin-left: 50px;justify-content: space-between">
+                <a href="https://www.google.com/maps/place/27%C2%B040'11.4%22N+83%C2%B028'00.2%22E/@27.6698202,83.4661618,211m/data=!3m2!1e3!4b1!4m14!1m7!3m6!1s0x3996864275d9755f:0x2b1e92d89d4bb3ae!2sButwal!3b1!8m2!3d27.6873608!4d83.4323375!3m5!1s0x0:0x0!7e2!8m2!3d27.6698191!4d83.4667092" target="_blank">
+                    <div style="display:flex;flex-direction: row;">
+                        <img src="../Icons/map.png" style="height:75%;margin-top: 5px;" alt="map">
+                        <div>
+                            35002 Butwal <br>
+                            Rupandehi, Nepal <br>
+                        </div>
+                    </div>
+                </a>
+                <a href="tel:+9779867719666">
+                    <div style="display:flex;flex-direction: row">
+                        <img src="../Icons/phone-black.png" alt="Phone">
+                        <div style="margin-top:5px">
+                            (+977)9867719666
+                        </div>
+                    </div>
+                </a>
+                <a href="mailto:dreamcoderamit@gmail.com">
+                    <div style="display:flex;flex-direction: row;justify-content: center">
+                        <img src="../Icons/email.png" alt="Mail">
+                        <div style="margin-top:5px">
+                                dreamcoderamit@gmail.com
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div align="center" style="padding:0px 0px 10px 0px;font-size: 15px;font-family: Poppins-Regular;box-sizing:border-box;background:url(../background-images/white.png)">
+                Copyright &copy DCA Studios 2019.  All rights reserved
+        </div>
+    </body>
+</html>
